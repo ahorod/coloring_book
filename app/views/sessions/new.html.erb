@@ -1,0 +1,13 @@
+<div class="row">
+  <div class="col-md-4">
+
+  </div>
+  <div class="col-md-4">
+    <h1>Sign in</h1>
+    <%= form_tag '/sign_in' do %>
+      Email: <%= text_field_tag :email %>
+      Password: <%= password_field_tag :password %>
+      <span class="waves-effect waves-light light-green accent-4 btn"><%= submit_tag "Sign in" %></span>
+    <% end %>
+  </div>
+</div>

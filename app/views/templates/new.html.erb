@@ -1,0 +1,9 @@
+
+<h1>Add a coloring template</h1>
+
+  <%= form_for @template do |f| %>
+    Tag <%= f.text_field :tag %>
+    Image: <%= f.text_field :image_url %>
+  <span class="waves-effect waves-light pink btn"><%= f.submit "Add" %></span>
+
+<% end %>

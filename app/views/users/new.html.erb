@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-4">
+
+  </div>
+  <div class="col-md-4">
+    <h1>Sign up</h1>
+    <%= form_for :user, url: '/users' do |f| %>
+      Name: <%= f.text_field :user_name %>
+      Email: <%= f.text_field :email %>
+      Password: <%= f.password_field :password %>
+      Password Confirmation: <%= f.password_field :password_confirmation %>
+      <span class="waves-effect waves-light light-green accent-4 btn"><%= f.submit "Sign up" %></span>
+    <% end %>
+  </div>
+</div>
