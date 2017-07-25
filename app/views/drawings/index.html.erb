@@ -1,0 +1,25 @@
+<h3>My drawings</h3>
+
+<div class="row">
+  <div class="section">
+  <% @drawings.each do |drawing| %>
+    <div class="col s4 m4">
+      <div class="valign-wrapper center-align">
+      <div class="card hoverable">
+        <div class="card-image">
+
+          <img src="<%= drawing.template.image%>" style="width:300px">
+          <%= link_to drawings_path, :method => "delete" do%>
+          <a class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+           <% end %>
+
+        </div>
+        <div class="card-content">
+          <p><%= drawing.template.tag %></p>
+        </div>
+      </div>
+    </div>
+    </div>
+  <% end %>
+</div>
+</div>

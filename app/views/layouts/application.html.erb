@@ -12,11 +12,13 @@
   <nav>
       <div class="nav-wrapper grey darken-4">
         <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><%= link_to "Coloring Templates", templates_path %></li>
           <% if admin %>
            <li><%= link_to "Add Template", new_template_path %></li>
-         <% end %>
+          <% end %>
+          <li><%= link_to "My Drawings", drawings_path %></li>
           <% if current_user %>
-            <li><%= current_user.email %></li>
+            <li><%= current_user.user_name %></li>
             <li><%= link_to "Sign out", '/sign_out' %></li>
           <% else %>
             <li><%= link_to "Sign up", 'sign_up' %></li>

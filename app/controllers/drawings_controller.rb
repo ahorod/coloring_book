@@ -1,4 +1,7 @@
 class DrawingsController < ApplicationController
+  def index
+    @drawings = current_user.drawings
+  end
 
   def create
     @drawing = current_user.drawings.new(drawing_params)
