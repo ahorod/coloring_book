@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   get '/sign_out' => 'sessions#destroy'
 
    resources :templates
-   resources :template_items
+   resources :drawings
 
 end

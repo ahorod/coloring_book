@@ -3,7 +3,7 @@ class TemplatesController < ApplicationController
 
   def index
     @templates = Template.all
-
+    @drawing = current_user.drawings.new
   end
 
   def new
