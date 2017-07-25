@@ -3,7 +3,14 @@
 
   <%= form_for @template do |f| %>
     Tag <%= f.text_field :tag %>
-    Image: <%= f.text_field :image_url %>
-  <span class="waves-effect waves-light pink btn"><%= f.submit "Add" %></span>
+    <div class="file-field input-field">
+    Image <%= f.file_field :image %>
+      <div class="file-path-wrapper">
+        <input class="file-path validate" type="text" placeholder="Click to upload image">
+      </div>
+    </div>
+    <div>
+      <span class="waves-effect waves-light pink btn"><%= f.submit "Add" %></span>
+    </div>
 
 <% end %>

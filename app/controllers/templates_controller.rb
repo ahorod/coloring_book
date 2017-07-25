@@ -26,6 +26,6 @@ class TemplatesController < ApplicationController
 
   private
   def template_params
-    params.require(:template).permit(:image_url, :tag)
+    params.require(:template).permit(:image, :tag)
   end
 end
