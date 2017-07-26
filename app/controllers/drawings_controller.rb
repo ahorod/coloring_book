@@ -3,11 +3,14 @@ class DrawingsController < ApplicationController
     @drawings = current_user.drawings
   end
 
+  def show
+    @drawing = current_user.drawings.find(params[:id])
+  end
+
   def create
     @drawing = current_user.drawings.new(drawing_params)
     @drawing.save
-    # session[:drawing_id] = @drawing.id
-     redirect_to templates_path
+    redirect_to templates_path
   end
 
   def update
@@ -19,7 +22,7 @@ class DrawingsController < ApplicationController
   def destroy
     @drawing = current_user.drawings.find(params[:id])
     @drawing.destroy
-    redirect_to templates_path
+    redirect_to drawings_path
   end
 
   private

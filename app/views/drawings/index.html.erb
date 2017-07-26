@@ -8,9 +8,13 @@
       <div class="card hoverable">
         <div class="card-image">
 
-          <img src="<%= drawing.template.image%>" style="width:300px">
-          <%= link_to drawings_path, :method => "delete" do%>
-          <a class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+          <%= link_to drawing_path(drawing.id) do %>
+             <%= image_tag drawing.template.image %>
+          <% end %>
+
+
+          <%= link_to drawing_path(drawing.id), :method => "delete" do%>
+          <span class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
            <% end %>
 
         </div>

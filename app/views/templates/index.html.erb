@@ -12,8 +12,9 @@
 
           <%= form_for @drawing, url: drawings_path do |f| %>
             <%= f.hidden_field :template_id, value: template.id %>
-          <a class="btn-floating halfway-fab waves-effect waves-light pink"><i class="material-icons"><%= f.submit "add" %></i></a>
+            <a class="btn-floating halfway-fab waves-effect waves-light pink"><i class="material-icons"><%= f.submit "add" %></i></a>
           <% end %>
+
         </div>
         <div class="card-content">
           <p><%= template.tag %></p>
