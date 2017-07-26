@@ -1,3 +1,5 @@
+require 'RMagick'
+require 'open-uri'
 class DrawingsController < ApplicationController
   def index
     @drawings = current_user.drawings
@@ -10,13 +12,38 @@ class DrawingsController < ApplicationController
   def create
     @drawing = current_user.drawings.new(drawing_params)
     @drawing.save
-    redirect_to templates_path
+
+    image_content = open(URI.join(request.url, @drawing.template.image.url)).read
+    image = Magick::ImageList.new()
+    image.from_blob(image_content)
+
+    image = image.threshold(Magick::QuantumRange*0.5)
+    image = image.crop(2, 2, image.columns-4, image.rows-4)
+    file = Paperclip::Tempfile.new(["template", ".png"])
+    image.write(file.path)
+    @drawing.image = file
+    @drawing.save
+
+    redirect_to drawing_path(@drawing.id)
   end
 
   def update
     @drawing = current_user.drawings.find(params[:id])
-    @drawing.update_attributes(drawing_params)
+    # color image
+    image_content = open(URI.join(request.url, @drawing.image.url)).read
+    image = Magick::ImageList.new()
+    image.from_blob(image_content)
+
+    x,y = params[:x].to_i, params[:y].to_i
+    color = params[:color]
+    puts x, y, color, image.pixel_color(x,y)
+
+    image = image.color_floodfill(x,y,color)
+    file = Paperclip::Tempfile.new(["processed", ".png"])
+    image.write(file.path)
+    @drawing.image = file
     @drawing.save
+
   end
 
   def destroy

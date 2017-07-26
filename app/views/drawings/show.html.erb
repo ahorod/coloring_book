@@ -1,7 +1,15 @@
 <div class="row">
   <div class="section">
     <div class="col s6">
-      <img src="<%= @drawing.template.image %>" alt="<%= @drawing.template.tag %>" />
+      <img id="image_id" src="<%= @drawing.image %>" alt="<%= @drawing.template.tag %>" />
     </div>
 </div>
+</div>
+<div>
+  <%= form_tag drawing_path(@drawing.id), method: :put, remote: true do %>
+    <%= text_field_tag :x, 0 %>
+    <%= text_field_tag :y, 0 %>
+    <%= text_field_tag :color, "" %>
+    <%= submit_tag "Submit"%>
+  <% end %>
 </div>
