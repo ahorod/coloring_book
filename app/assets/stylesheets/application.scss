@@ -17,6 +17,7 @@
 
  @import 'materialize';
  @import "font-awesome";
+ @import "social-share-button";
 
  .card img {
     max-height: 300px;
@@ -38,4 +39,12 @@
 .color_picker a {
   cursor: url('/paintbrush.svg') 2 38, pointer;
   border: 7px solid transparent;
+}
+
+.social-share-button {
+  .ssb-icon {
+    background-size: 24px 24px;
+    height: 24px;
+    width: 24px;
+  }
 }

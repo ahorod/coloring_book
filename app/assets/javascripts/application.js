@@ -16,3 +16,4 @@
 //= require_tree .
 //= require materialize-sprockets
 //= require jquery-ui
+//= require social-share-button

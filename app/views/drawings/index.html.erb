@@ -12,14 +12,15 @@
              <%= image_tag drawing.image %>
           <% end %>
 
-
           <%= link_to drawing_path(drawing.id), :method => "delete" do%>
           <span class="btn-floating halfway-fab waves-effect waves-light grey darken-4"><i class="fa fa-trash-o" aria-hidden="true"></i></span>
            <% end %>
-
         </div>
         <div class="card-content">
-          <p><%= drawing.template.tag %></p>
+          <div>
+              <%= social_share_button_tag(@drawing) %>
+          </div>
+          <h6><%= drawing.template.tag %></h6>
         </div>
       </div>
     </div>

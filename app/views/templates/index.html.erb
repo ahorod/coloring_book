@@ -8,7 +8,7 @@
       <div class="card hoverable">
         <div class="card-image">
 
-          <img src="<%= template.image.url%>" alt="<%= template.tag %>" style="width:300px">
+          <img src="<%= template.image.url%>" alt="<%= template.tag %>" style="width:100%">
           <% if current_user %>
             <%= form_for @drawing, url: drawings_path do |f| %>
               <%= f.hidden_field :template_id, value: template.id %>
