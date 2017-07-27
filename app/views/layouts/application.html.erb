@@ -16,8 +16,9 @@
           <% if admin %>
            <li><%= link_to "Add Template", new_template_path %></li>
           <% end %>
-          <li><%= link_to "My Drawings", drawings_path %></li>
+
           <% if current_user %>
+            <li><%= link_to "My Drawings", drawings_path %></li>
             <li><%= current_user.user_name %></li>
             <li><%= link_to "Sign out", '/sign_out' %></li>
           <% else %>

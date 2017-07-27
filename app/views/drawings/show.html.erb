@@ -1,11 +1,42 @@
 <div class="row">
   <div class="section">
-    <div class="col s6">
-      <img style="cursor: pointer;" id="image_id" src="<%= @drawing.image %>" alt="<%= @drawing.template.tag %>" />
+    <div class="col s9">
+      <img class="brush" id="image_id" src="<%= @drawing.image %>" alt="<%= @drawing.template.tag %>" />
     </div>
+  </div>
+  <div class="section">
+    <div class="col s3 color_picker">
+      <a class="waves-effect  waves-light btn-large red accent-4 " ></a>
+      <a class="waves-effect  waves-light btn-large pink accent-2 "></a>
+      <a class="waves-effect  waves-light btn-large pink accent-3 "></a>
+      <br>
+      <br>
+      <a class="waves-effect  waves-light btn-large purple darken-1 "></a>
+      <a class="waves-effect  waves-light btn-large deep-purple "></a>
+      <a class="waves-effect  waves-light btn-large indigo "></a>
+      <a class="waves-effect  waves-light btn-large blue "></a>
+      <a class="waves-effect  waves-light btn-large light-blue accent-1 "></a>
+      <a class="waves-effect  waves-light btn-large teal "></a>
+      <br>
+      <br>
+      <a class="waves-effect  waves-light btn-large green darken-2"></a>
+      <a class="waves-effect  waves-light btn-large light-green "></a>
+      <a class="waves-effect  waves-light btn-large lime "></a>
+      <a class="waves-effect  waves-light btn-large  yellow accent-3 "></a>
+      <a class="waves-effect  waves-light btn-large amber "></a>
+      <a class="waves-effect  waves-light btn-large deep-orange accent-3 "></a>
+      <br>
+      <br>
+      <a class="waves-effect  waves-light btn-large brown darken-3 "></a>
+      <a class="waves-effect  waves-light btn-large blue-grey "></a>
+      <a class="waves-effect  waves-light btn-large white "></a>
+
+
+
+    </div>
+  </div>
 </div>
-</div>
-<div>
+<div style="display: none">
   <%= form_tag drawing_path(@drawing.id), method: :put, remote: true do %>
     <%= text_field_tag :x, 0 %>
     <%= text_field_tag :y, 0 %>

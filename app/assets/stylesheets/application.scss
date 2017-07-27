@@ -26,3 +26,16 @@
     max-height: none;
     object-fit: none;
 }
+
+.btn-large {
+   margin-bottom: 15px;
+ }
+
+.brush {
+  cursor: url('/paintbrush.svg') 2 38, pointer;
+}
+
+.color_picker a {
+  cursor: url('/paintbrush.svg') 2 38, pointer;
+  border: 7px solid transparent;
+}
