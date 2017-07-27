@@ -1,4 +1,4 @@
-$(function(){
+document.addEventListener("turbolinks:load", function(){
   $("#image_id").on("click", function(event){
     $("#x").val(event.offsetX / event.currentTarget.width)
     $("#y").val(event.offsetY / event.currentTarget.height)
